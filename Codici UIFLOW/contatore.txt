@@ -1,0 +1,17 @@
+from m5stack import *
+from m5ui import *
+from uiflow import *
+import imu
+import time
+import hat
+
+hat_bugc0 = hat.get(hat.BUGC)
+setScreenColor(0x111111)
+lcd.setRotation(2)
+
+for i in range(1,100):
+  lcd.print(i, 0, 0, 0xffffff)
+  hat_bugc0.SetPulse(1, 0)
+  hat_bugc0.SetPulse(0, 0 * -1)
+  wait(0.5)
+#hat_bugc0.SetAllPulse(0, 0, 0, 0)
